@@ -1,223 +1,112 @@
 {
-
     "App": {
-
         "Path": {
-
             "Root": "C:\\jenkins\\dwhbi\\",
-
             "SubFolders": {
-
                 "Artefakt": "artefakt\\",
-
                 "Output": "output\\",
-
                 "Repos": "Repos\\",
-
                 "Temp": "temp\\",
-
                 "Tool": "tool\\",
-
                 "Scripts": {
-
                     "SubFolders": {
-
                         "Actions": "Scripts\\Actions\\",
-
                         "Config": "Scripts\\Config\\",
-
                         "Modules": "Scripts\\Modules\\",
-
                         "ModulesFunctions": "Scripts\\Modules\\Functions\\",
-
                         "Secure": "Scripts\\Secure\\"
-
                     }
-
                 }
-
             }
-
         }
-
     },
-
     "Tools": {
-
         "MSBuild": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe",
-
         "SQLPackage": "C:\\Program Files\\Microsoft SQL Server\\150\\DAC\\bin\\SqlPackage.exe",
-
         "DTUtil": "C:\\Program Files\\Microsoft SQL Server\\Client SDK\\DTExec\\dtutil.exe"
-
     },
-
     "Bitbucket": {
-
-        "BaseUrl": https://git.cpas.cz/rest/api/1.0
-
+        "BaseUrl": "https://git.cpas.cz/rest/api/1.0"
     },
-
     "Env": {
-
         "TEST": {
-
             "SqlServer": {
-
                 "Server": "CZSDWHBITEST",
-
                 "Port": 1433,
-
                 "Username": "sql-user",
-
                 "Password": "sec_TEST_sqlserver_login.txt",
-
                 "SQLLogin": "sql-login",
-
                 "Authentication": "SQL",
-
                 "Encryption": true,
-
                 "TrustServerCertificate": true,
-
                 "ConnectionTimeout": 60,
-
                 "MaxPoolSize": 200,
-
                 "ApplicationIntent": "ReadWrite",
-
                 "MultiSubnetFailover": true,
-
                 "PacketSize": 8192,
-
                 "WorkstationID": "CICD-WORKSTATION",
-
                 "LoadBalanceTimeout": 120
-
-            }, 
-
-            "Teradata": {
-
-                "Server": "CZSDWHBIPROD",
-
-                "Port": 1025,
-
-                "Database": "TEST_L3",
-
-                "Username": "test-td-user",
-
-                "Password": "sec_TEST_sqlserver_login.txt",
-
-                "Authentication": "TD2",
-
-                "ConnectionTimeout": 60,
-
-                "MaxSessions": 50,
-
-                "TDSystem": "CZSDWHBIPROD",
-
-                "LogonMechanism": "LDAP",
-
-                "UseKerberos": false,
-
-                "EncryptData": true,
-
-                "Driver": "Teradata ODBC Driver 17.0"
-
-            }
-
-        },
-
-        "PROD": {
-
-            "SqlServer": {
-
-                "Server": "CZSDWHBIPROD",
-
-                "Port": 1433,
-
-                "Username": "sql-user",
-
-                "Password": "sec_PROD_sqlserver_login.txt",
-
-                "SQLLogin": "sql-login",
-
-                "Authentication": "SQL",
-
-                "Encryption": true,
-
-                "TrustServerCertificate": true,
-
-                "ConnectionTimeout": 60,
-
-                "MaxPoolSize": 200,
-
-                "ApplicationIntent": "ReadWrite",
-
-                "MultiSubnetFailover": true,
-
-                "PacketSize": 8192,
-
-                "WorkstationID": "CICD-WORKSTATION",
-
-                "LoadBalanceTimeout": 120
-
             },
-
             "Teradata": {
-
                 "Server": "CZSDWHBIPROD",
-
                 "Port": 1025,
-
-                "Password": "sec_PROD_teradata_login",
-
-                "Authentication": "TD",
-
+                "Database": "TEST_L3",
+                "Username": "test-td-user",
+                "Password": "sec_TEST_sqlserver_login.txt",
+                "Authentication": "TD2",
                 "ConnectionTimeout": 60,
-
                 "MaxSessions": 50,
-
                 "TDSystem": "CZSDWHBIPROD",
-
                 "LogonMechanism": "LDAP",
-
                 "UseKerberos": false,
-
                 "EncryptData": true,
-
                 "Driver": "Teradata ODBC Driver 17.0"
-
             }
-
         },
-
-        "DEV": {
-
-            "SSISDeployment": {
-
-                "Server": "CZSDWHBIDEV",
-
+        "PROD": {
+            "SqlServer": {
+                "Server": "CZSDWHBIPROD",
                 "Port": 1433,
-
-                "Catalog": "SSISDB",
-
-                "Environment": "DEV",
-
-                "Username": "ssis-user",
-
-                "Password": "sec_DEV_ssis_login.txt",
-
-                "TrustServerCertificate": true,
-
+                "Username": "sql-user",
+                "Password": "sec_PROD_sqlserver_login.txt",
+                "SQLLogin": "sql-login",
+                "Authentication": "SQL",
                 "Encryption": true,
-
-                "ConnectionTimeout": 60
-
+                "TrustServerCertificate": true,
+                "ConnectionTimeout": 60,
+                "MaxPoolSize": 200,
+                "ApplicationIntent": "ReadWrite",
+                "MultiSubnetFailover": true,
+                "PacketSize": 8192,
+                "WorkstationID": "CICD-WORKSTATION",
+                "LoadBalanceTimeout": 120
+            },
+            "Teradata": {
+                "Server": "CZSDWHBIPROD",
+                "Port": 1025,
+                "Password": "sec_PROD_teradata_login",
+                "Authentication": "TD",
+                "ConnectionTimeout": 60,
+                "MaxSessions": 50,
+                "TDSystem": "CZSDWHBIPROD",
+                "LogonMechanism": "LDAP",
+                "UseKerberos": false,
+                "EncryptData": true,
+                "Driver": "Teradata ODBC Driver 17.0"
             }
-
+        },
+        "DEV": {
+            "SSISDeployment": {
+                "Server": "CZSDWHBIDEV",
+                "Port": 1433,
+                "Catalog": "SSISDB",
+                "Environment": "DEV",
+                "Username": "ssis-user",
+                "Password": "sec_DEV_ssis_login.txt",
+                "TrustServerCertificate": true,
+                "Encryption": true,
+                "ConnectionTimeout": 60
+            }
         }
-
     }
-
 }
