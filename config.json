@@ -28,24 +28,25 @@
     "Bitbucket": {
         "BaseUrl": "https://git.cpas.cz/rest/api/1.0"
     },
-    "Env": {
-        "TEST": {
+    
+    "Deploy": {
+         "SQL": {
             "SqlServer": {
-                "Server": "CZSDWHBITEST",
-                "Port": 1433,
-                "Username": "sql-user",
-                "Password": "sec_TEST_sqlserver_login.txt",
-                "SQLLogin": "sql-login",
-                "Authentication": "SQL",
-                "Encryption": true,
-                "TrustServerCertificate": true,
-                "ConnectionTimeout": 60,
-                "MaxPoolSize": 200,
-                "ApplicationIntent": "ReadWrite",
-                "MultiSubnetFailover": true,
-                "PacketSize": 8192,
-                "WorkstationID": "CICD-WORKSTATION",
-                "LoadBalanceTimeout": 120
+            "Server": "CZSDWHBITEST",
+            "Port": 1433,
+            "Username": "sql-user",
+            "Password": "sec_TEST_sqlserver_login.txt",
+            "SQLLogin": "sql-login",
+            "Authentication": "SQL",
+            "Encryption": true,
+            "TrustServerCertificate": true,
+            "ConnectionTimeout": 60,
+            "MaxPoolSize": 200,
+            "ApplicationIntent": "ReadWrite",
+            "MultiSubnetFailover": true,
+            "PacketSize": 8192,
+            "WorkstationID": "CICD-WORKSTATION",
+            "LoadBalanceTimeout": 120
             },
             "Teradata": {
                 "Server": "CZSDWHBIPROD",
@@ -60,53 +61,53 @@
                 "LogonMechanism": "LDAP",
                 "UseKerberos": false,
                 "EncryptData": true,
-                "Driver": "Teradata ODBC Driver 17.0"
+                "Driver": "Teradata ODBC Driver 17.0"    
             }
         },
-        "PROD": {
-            "SqlServer": {
-                "Server": "CZSDWHBIPROD",
-                "Port": 1433,
-                "Username": "sql-user",
-                "Password": "sec_PROD_sqlserver_login.txt",
-                "SQLLogin": "sql-login",
-                "Authentication": "SQL",
-                "Encryption": true,
-                "TrustServerCertificate": true,
-                "ConnectionTimeout": 60,
-                "MaxPoolSize": 200,
-                "ApplicationIntent": "ReadWrite",
-                "MultiSubnetFailover": true,
-                "PacketSize": 8192,
-                "WorkstationID": "CICD-WORKSTATION",
-                "LoadBalanceTimeout": 120
-            },
-            "Teradata": {
-                "Server": "CZSDWHBIPROD",
-                "Port": 1025,
-                "Password": "sec_PROD_teradata_login",
-                "Authentication": "TD",
-                "ConnectionTimeout": 60,
-                "MaxSessions": 50,
-                "TDSystem": "CZSDWHBIPROD",
-                "LogonMechanism": "LDAP",
-                "UseKerberos": false,
-                "EncryptData": true,
-                "Driver": "Teradata ODBC Driver 17.0"
-            }
+       "SSIS": {
+            "Server": "CZSDWHBIDEV",
+            "Port": 1433,
+            "Catalog": "SSISDB",
+            "Environment": "DEV",
+            "Username": "ssis-user",
+            "Password": "sec_DEV_ssis_login.txt",
+            "TrustServerCertificate": true,
+            "Encryption": true,
+            "ConnectionTimeout": 60
+        
         },
-        "DEV": {
-            "SSISDeployment": {
-                "Server": "CZSDWHBIDEV",
-                "Port": 1433,
-                "Catalog": "SSISDB",
-                "Environment": "DEV",
-                "Username": "ssis-user",
-                "Password": "sec_DEV_ssis_login.txt",
-                "TrustServerCertificate": true,
-                "Encryption": true,
-                "ConnectionTimeout": 60
-            }
+        "SSRS": {
+            "Server": "CZSDWHBIDEV",
+            "Port": 1433,
+            "Catalog": "SSISDB",
+            "Environment": "DEV",
+            "Username": "ssis-user",
+            "Password": "sec_DEV_ssis_login.txt",
+            "TrustServerCertificate": true,
+            "Encryption": true,
+            "ConnectionTimeout": 60      
+        },
+        "SSAS": {
+            "Server": "CZSDWHBIDEV",
+            "Port": 1433,
+            "Catalog": "SSISDB",
+            "Environment": "DEV",
+            "Username": "ssis-user",
+            "Password": "sec_DEV_ssis_login.txt",
+            "TrustServerCertificate": true,
+            "Encryption": true,
+            "ConnectionTimeout": 60      
+        },
+        "PBIX": {
+            "Server": "CZSDWHBIDEV",
+            "Port": 1433,
+            "Catalog": "SSISDB",
+            "Environment": "DEV",
+            "Username": "ssis-user",
+            "Password": "sec_DEV_ssis_login.txt",
+            "TrustServerCertificate": true,
+            "Encryption": true,
+            "ConnectionTimeout": 60      
         }
-    }
+    }    
 }
